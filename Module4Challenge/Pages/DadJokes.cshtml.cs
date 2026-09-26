@@ -32,7 +32,27 @@ namespace Module4Challenge.Pages
 
     public void OnGet()
         {
+
+            jokesToShow = GetJokeList(); 
+            // Calls the GetJokeList() method. This populates the jokesToShow array with new jokes. 
+                                
+        }
+
+        
+
+    public void OnPost()
+        {
              
+            jokesToShow = GetJokeList();
+            // Calls the GetJokeList() method. This populates the jokesToShow array with new jokes. 
+
+        }
+
+    public string[] GetJokeList()
+        {
+            string[] newJokeList = new string[numberOfJokesToShow];
+            // Creates a new array with a length of two to temporarily hold jokes. 
+
             Random rnd = new Random();
             // Creates a new random object. 
             int randomJokeNumber = rnd.Next(0,12);
@@ -45,78 +65,31 @@ namespace Module4Challenge.Pages
                 string currentJoke = dadJokes[randomJokeNumber]; 
                 // currentJoke is set to the value in dadJokes that the int randomJokeNumber is. This sets the current joke to a random joke. 
 
-                for(int c = 0; c < jokesToShow.Length; c++){
-                    // Loops over jokesToShow. c represents the current joke being checked.. 
-                    if(jokesToShow[c] == currentJoke)
-                    // If the current joke in jokesToShow is the same as currentJoke
+                for(int c = 0; c < newJokeList.Length; c++){
+                    // Loops over newJokeList. c represents the current joke being checked. 
+                    if(newJokeList[c] == currentJoke)
+                    // If the current joke in newJokeList is the same as currentJoke,
                     {
                         randomJokeNumber = rnd.Next(0,12);
                         currentJoke = dadJokes[randomJokeNumber];
                         // Sets the randomJokeNumber to an new random value and sets the currentJoke to a new random string in dadJokes. 
-                        x = 0;
-                        // Sets x to 0 so that the jokesToShow list is looped over again.
+                        c = 0;
+                        // Sets c to 0 so that the newJokeList list is looped over again.
                         continue;
                         // Goes back to the top of the loop.
                     }
-
-                
                 }
                 
-                jokesToShow[x] = currentJoke;
+                newJokeList[x] = currentJoke;
                 // The end of the x for-loop. After the c for-loop is done checking the joke is original, 
-                // this line sets the x jokesToShow value as the currentJoke. 
+                // this line sets the x newJokeList value as the currentJoke. 
 
                 randomJokeNumber = rnd.Next(0,12);
                 // Sets randomJokeNumber to a new random number.
                 
             }
-                               
-            }
-
-        
-
-    public void OnPost()
-        {
-             
-              
-            Random rnd = new Random();
-            // Creates a new random object. 
-            int randomJokeNumber = rnd.Next(0,12);
-            // Generates a new randomJokeNumber between 0 and 11. 
-
-            for (int x = 0; x < numberOfJokesToShow; x++)
-            // Loops for numberOfJokesToShow. x represents the current joke being chosen.
-            {
-                
-                string currentJoke = dadJokes[randomJokeNumber]; 
-                // Sets currentJoke to an new random joke in dadJokes.
-
-                for(int c = 0; c < jokesToShow.Length; c++){
-                    // Loops over jokesToShow. c represents the current joke being checked. 
-                    if(jokesToShow[c] == currentJoke)
-                    // If the current joke in jokesToShow is the same as currentJoke
-                    {
-                        randomJokeNumber = rnd.Next(0,12);
-                        currentJoke = dadJokes[randomJokeNumber];
-                        // Sets the randomJokeNumber to an new random value and sets the currentJoke to a new random string in dadJokes. 
-                        x = 0;
-                        // Sets x to -1 so that the jokesToShow list is looped over again.
-                        continue;
-                        // Goes back to the top of the loop.
-                    }
-
-                
-                }
-                
-                jokesToShow[x] = currentJoke;
-                // The end of the x for-loop. After the c for-loop is done checking the joke is original, 
-                // this line sets the x jokesToShow value as the currentJoke. 
-
-                randomJokeNumber = rnd.Next(0,12);
-                // Sets randomJokeNumber to a new random number.
-                
-            }
-              
+            return newJokeList;
+            // Returns newJokeList. 
         }
 
     }
