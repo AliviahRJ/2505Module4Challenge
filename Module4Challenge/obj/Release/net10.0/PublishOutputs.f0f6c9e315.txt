@@ -1,0 +1,7 @@
+/workspaces/2505Module4Challenge/Module4Challenge/bin/Release/net10.0/publish/Module4Challenge
+/workspaces/2505Module4Challenge/Module4Challenge/bin/Release/net10.0/publish/appsettings.Development.json
+/workspaces/2505Module4Challenge/Module4Challenge/bin/Release/net10.0/publish/appsettings.json
+/workspaces/2505Module4Challenge/Module4Challenge/bin/Release/net10.0/publish/Module4Challenge.dll
+/workspaces/2505Module4Challenge/Module4Challenge/bin/Release/net10.0/publish/Module4Challenge.deps.json
+/workspaces/2505Module4Challenge/Module4Challenge/bin/Release/net10.0/publish/Module4Challenge.runtimeconfig.json
+/workspaces/2505Module4Challenge/Module4Challenge/bin/Release/net10.0/publish/Module4Challenge.pdb
